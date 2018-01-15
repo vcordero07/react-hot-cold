@@ -1,0 +1,30 @@
+header {
+  display: block;
+}
+
+nav {
+  position: relative;
+  height: 10%;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li:first-child {
+  float: left;
+}
+
+nav ul li {
+  float: right;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+header h1 {
+  font-size: 3em;
+  font-weight: 900;
+  padding: 0.8em;
+}
