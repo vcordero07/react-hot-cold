@@ -24,7 +24,16 @@ nav ul li {
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 70px;
   font-weight: 900;
-  padding: 0.8em;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-size: 1.3em;
 }

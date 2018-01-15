@@ -1,10 +1,10 @@
 #guess-title {
-  background-color: #e74c3c;
+  background-color: #c0392b;
   padding: 1em 0.4em;
   font-size: 21px;
-  font-weight: 400;
   display: block;
   line-height: 1em;
+  font-weight: 700;
 }
 
 input.text {
