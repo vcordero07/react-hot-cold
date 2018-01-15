@@ -1,8 +1,38 @@
-#guess {
-  background-color: #c0392b;
+#guess-title {
+  background-color: #e74c3c;
   padding: 1em 0.4em;
-  font-size: 1.5em;
+  font-size: 21px;
   font-weight: 400;
   display: block;
   line-height: 1em;
+}
+
+input.text {
+  text-align: center;
+  padding: 0.2em;
+  font-size: 2em;
+}
+
+input,
+button {
+  width: 18.75rem;
+  height: 3.125rem;
+  line-height: 100%;
+  display: block;
+  padding: 0.8em 0;
+  margin: 0.8rem auto 0;
+  background: #50597b;
+  color: #fff;
+  border: solid 1px #1f253d;
+  border-radius: 4px;
+}
+
+button.button {
+  color: #95a5a6;
+  font-size: 2em;
+  padding: 0;
+  border: 3px solid grey;
+  -webkit-transition: background 1s ease-in-out;
+  -o-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
 }

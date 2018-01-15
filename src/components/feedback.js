@@ -5,7 +5,13 @@ import './feedback.css';
 export default function FeedbackSection(props) {
   return (
     <section id="feedback" >
-      <p>What do I do? </p>
-      </section>
+
+      <ul id="guess-list">
+        <li>-</li>
+      </ul>
+      <h2 id="guess-count">
+        You've made <span id="count">0</span> guesses!
+      </h2>
+    </section>
   );
 }
