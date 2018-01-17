@@ -33,8 +33,29 @@ constructor(props){
     });
   }
 
-  _makeGuess = (gues) => {
+  _makeGuess = (guess) => {
+    if (isNaN(guess)) {
+      this.setState({ feeback: 'Please enter a valid number'});
+    }
+    const diff = Math.abs(guess - this.state.answer);
 
+    let feedback;
+    if (diff >= 30) {
+      feedback = `You are cold`;
+    }
+    else if (diff >= 10) {
+      feedback = `You are warm`;
+    }
+    else if (diff >= 1) {
+      feedback = `You are hot`;
+    }
+    else {
+      feedback = `You got it`;
+    }
+
+    this.setState({
+      feedback
+    });
   }
 
   render() {
@@ -64,7 +85,9 @@ constructor(props){
         </header>
         <main>
           <GuessSection
-            feedback={this.state.feedback}/>
+            feedback={this.state.feedback}
+            onMakeGuess={guess => this._makeGuess(guess)}
+            />
           <FeedbackSection />
           <div style={{display: this.state.gameInfo ? 'block' : 'none' }}><InfoSection  /></div>
         </main>
