@@ -2,16 +2,19 @@ import React from 'react';
 
 import './game.css';
 
-import Guess from './guess'
-import Feedback from './feedback'
-import Info from './info'
+import GuessSection from './guess'
+import FeedbackSection from './feedback'
+import InfoSection from './info'
 
-export default class game extends React.Component {
+export default class Game extends React.Component {
 constructor(props){
   super(props);
   this.state = {
     on: false,
-    gameInfo: false
+    gameInfo: false,
+    guesses: [],
+    answer: Math.round(Math.random() * 100),
+    feedback: 'Make your guess!'
   }
 }
 
@@ -19,6 +22,19 @@ constructor(props){
     this.setState({
       gameInfo: !this.state.gameInfo
     });
+  }
+
+  _newGame = () => {
+    this.setState({
+      gameInfo: false,
+      guesses: [],
+      answer: Math.round(Math.random() * 100),
+      feedback: 'Make your guess!'
+    });
+  }
+
+  _makeGuess = (gues) => {
+
   }
 
   render() {
@@ -29,7 +45,7 @@ constructor(props){
             <ul>
             <li><a
                 href="#info"
-                clasName="info"
+                className="info"
                 onClick={this._displayInfo}
                 >info
                 </a>
@@ -37,7 +53,8 @@ constructor(props){
               <li>
               <a
                 href="#new-game"
-                clasName="new-game"
+                className="new-game"
+                onClick={this._newGame}
                 >+ new game
               </a>
             </li>
@@ -46,9 +63,10 @@ constructor(props){
           <h1 >Hot or Cold</h1>
         </header>
         <main>
-          <Guess />
-          <Feedback />
-          <div style={{display: this.state.gameInfo ? 'block' : 'none' }}><Info  /></div>
+          <GuessSection
+            feedback={this.state.feedback}/>
+          <FeedbackSection />
+          <div style={{display: this.state.gameInfo ? 'block' : 'none' }}><InfoSection  /></div>
         </main>
       </div>
     );
