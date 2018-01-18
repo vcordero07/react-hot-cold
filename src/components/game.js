@@ -54,7 +54,8 @@ constructor(props){
     }
 
     this.setState({
-      feedback
+      feedback,
+      guesses: [...this.state.guesses, guess]
     });
   }
 
@@ -88,8 +89,12 @@ constructor(props){
             feedback={this.state.feedback}
             onMakeGuess={guess => this._makeGuess(guess)}
             />
-          <FeedbackSection />
-          <div style={{display: this.state.gameInfo ? 'block' : 'none' }}><InfoSection  /></div>
+          <FeedbackSection
+            guessList={this.state.guesses.join(', ')}
+            guessCount={this.state.guesses.length}
+            />
+          <div style={{display: this.state.gameInfo ? 'block' : 'none' }}>
+          <InfoSection  /></div>
         </main>
       </div>
     );

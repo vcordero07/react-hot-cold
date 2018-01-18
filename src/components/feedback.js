@@ -7,10 +7,10 @@ export default function FeedbackSection(props) {
     <section id="feedback" >
 
       <ul id="guess-list">
-        <li>-</li>
+        <li>{props.guessList}</li>
       </ul>
       <h2 id="guess-count">
-        You've made <span id="count">0</span> guesses!
+        You've made <span id="count">{props.guessCount}</span> guesses!
       </h2>
     </section>
   );
