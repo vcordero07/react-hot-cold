@@ -36,6 +36,7 @@ constructor(props){
   _makeGuess = (guess) => {
     if (isNaN(guess)) {
       this.setState({ feeback: 'Please enter a valid number'});
+      return
     }
     const diff = Math.abs(guess - this.state.answer);
 
