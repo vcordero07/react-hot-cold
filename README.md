@@ -1,2 +1,3 @@
 ## react hot & cold
-## & & Netlify-cli
+## & Netlify-cli
+## & Travis CI
